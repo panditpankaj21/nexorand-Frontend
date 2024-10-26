@@ -23,7 +23,7 @@ const HomePage = () => {
 
   const handleClaimPoints = async (friendUsername) => {
     try {
-      const response = await axios.patch(`http://localhost:7000/api/user/v1/claim-points`, {
+      const response = await axios.patch(`https://leaderboard-fdyt.onrender.com/api/user/v1/claim-points`, {
         username: friendUsername,
       });
   
