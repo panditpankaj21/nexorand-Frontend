@@ -16,7 +16,7 @@ const UserList = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.get('https://leaderboard-fdyt.onrender.com/api/user/v1/get-users');
+            const response = await axios.get(`${import.meta.env.VITE_REACT_APP_API_URI}/api/user/v1/get-users`);
             const sortedUsers = response.data.data.sort((a, b) => b.points - a.points);
             setUsers(sortedUsers);
         } catch (err) {

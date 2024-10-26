@@ -1,4 +1,4 @@
-import React, { useContext, useState } from 'react';
+import React, { useState } from 'react';
 import axios from 'axios';
 import {useAuth} from '../context/AuthContext';
 import { useNavigate } from 'react-router-dom';
@@ -18,7 +18,7 @@ const LoginPage = () => {
     e.preventDefault();
     try {
         console.log(formData)
-      const response = await axios.post('https://leaderboard-fdyt.onrender.com/api/auth/v1/login', formData);
+      const response = await axios.post(`${import.meta.env.VITE_REACT_APP_API_URI}/api/auth/v1/login`, formData);
       login(response.data);
       navigate('/');  
     } catch (error) {

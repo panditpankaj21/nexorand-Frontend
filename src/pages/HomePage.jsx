@@ -9,7 +9,7 @@ const HomePage = () => {
 
     const fetchFriends = async () => {
       try {
-        const response = await axios.get('https://leaderboard-fdyt.onrender.com/api/user/v1/get-users');
+        const response = await axios.get(`${import.meta.env.VITE_REACT_APP_API_URI}/api/user/v1/get-users`);
         setFriends(response.data.data.sort((a, b) => b.Points - a.Points))
       } catch (error) {
         console.error('Error fetching friends:', error);
@@ -23,7 +23,7 @@ const HomePage = () => {
 
   const handleClaimPoints = async (friendUsername) => {
     try {
-      const response = await axios.patch(`https://leaderboard-fdyt.onrender.com/api/user/v1/claim-points`, {
+      const response = await axios.patch(`${import.meta.env.VITE_REACT_APP_API_URI}/api/user/v1/claim-points`, {
         username: friendUsername,
       });
   
