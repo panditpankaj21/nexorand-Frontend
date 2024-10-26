@@ -53,7 +53,7 @@ const RegistrationPage = () => {
 
     if (validateForm()) {
       try {
-        const response = await axios.post('http://localhost:7000/api/auth/v1/register', formData);
+        const response = await axios.post('https://leaderboard-fdyt.onrender.com/api/auth/v1/register', formData);
         setSuccessMessage('Registration successful!');
         navigate('/login') 
       } catch (error) {

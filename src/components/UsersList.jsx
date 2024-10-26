@@ -16,7 +16,7 @@ const UserList = () => {
         setLoading(true);
         setError(null);
         try {
-            const response = await axios.get('http://localhost:7000/api/user/v1/get-users');
+            const response = await axios.get('https://leaderboard-fdyt.onrender.com/api/user/v1/get-users');
             const sortedUsers = response.data.data.sort((a, b) => b.points - a.points);
             setUsers(sortedUsers);
         } catch (err) {
@@ -29,7 +29,7 @@ const UserList = () => {
     // Fetch user points history
     const fetchUserHistory = async (username) => {
         try {
-            const response = await axios.post('http://localhost:7000/api/user/v1/your-history', { username });
+            const response = await axios.post('https://leaderboard-fdyt.onrender.com/api/user/v1/your-history', { username });
             setPointsHistory(response.data.data);
         } catch (err) {
             setError('Error fetching user history');

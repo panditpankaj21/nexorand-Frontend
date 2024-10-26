@@ -9,7 +9,7 @@ const HomePage = () => {
 
     const fetchFriends = async () => {
       try {
-        const response = await axios.get('http://localhost:7000/api/user/v1/get-users');
+        const response = await axios.get('https://leaderboard-fdyt.onrender.com/api/user/v1/get-users');
         setFriends(response.data.data.sort((a, b) => b.Points - a.Points))
       } catch (error) {
         console.error('Error fetching friends:', error);

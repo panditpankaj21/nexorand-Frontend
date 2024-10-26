@@ -18,7 +18,7 @@ const LoginPage = () => {
     e.preventDefault();
     try {
         console.log(formData)
-      const response = await axios.post('http://localhost:7000/api/auth/v1/login', formData);
+      const response = await axios.post('https://leaderboard-fdyt.onrender.com/api/auth/v1/login', formData);
       login(response.data);
       navigate('/');  
     } catch (error) {
